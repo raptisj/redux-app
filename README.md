@@ -1,6 +1,9 @@
 ## Local Server
 
-### `npm run db` this will spin a server in a different post
+### `npm run db` 
+
+this will spin a server in a different post
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
