@@ -1,0 +1,72 @@
+.top-banner {
+	background-image: url('./../assets/place_one.jpg');
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	height: 36vh;
+	min-height: 300px;
+
+	h1 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%); 
+		margin: 0;
+		color: #fff;
+		font-size: 56px;
+
+		@include breakpoint(lg) {
+			font-size: 46px;
+		}
+
+		@include breakpoint(md) {
+			font-size: 36px;
+		}
+	}
+
+
+	.search-bar {
+		height: 50px;
+		border-top-left-radius: 50px; 
+		width: 90%;
+		max-width: 900px;
+		background: rgba(255, 255 ,255, 0.7);
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%);
+		display: grid;
+		padding-right: 20px;
+		grid-template-columns: repeat(2, 1fr);
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -50%;
+			width: 50%;
+			height: 100%;
+			background: rgba(255, 255 ,255, 0.7);
+		}
+	}
+
+	.search-bar {
+		&__form {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			padding: 0 20px;
+			grid-column: 1 / -1;
+		}
+
+		&__label {
+			font-weight: 600;
+		}
+
+		&__input {
+			border: none;
+			padding: 4px;
+		}
+	} 
+}

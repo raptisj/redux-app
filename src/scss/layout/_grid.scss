@@ -1,0 +1,14 @@
+.container {
+	display: grid;
+	grid-template-columns: 1fr 900px 1fr;
+	padding-bottom: 50px;
+
+	@include breakpoint(xxl) {
+		grid-template-columns: 1fr 1160px 1fr;
+	}
+	
+	@include breakpoint(lg) {
+		grid-template-columns: 1fr 90% 1fr;
+	}
+}
+

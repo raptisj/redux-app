@@ -1,0 +1,11 @@
+.modal-input {
+	width: 500px;
+	padding: 20px;
+	position: relative;
+
+	.modal-close {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+}

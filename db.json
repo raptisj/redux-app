@@ -1,0 +1,51 @@
+{
+  "places": [
+    {
+      "id": 1,
+      "title": "Beach Bar Ammos",
+      "country": "Crete",
+      "subtitle": "Enjoy the island",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur veritatis, ratione optio unde nihil molestiae atque ducimus, reiciendis voluptas placeat recusandae autem consectetur quo facilis natus dolorem eos iste.",
+      "likes": 42,
+      "comments": [
+        {
+          "comment_id": "b67a33c0-a95f-11e9-ac99-7761cbc088b0",
+          "name": "po",
+          "comment": "po",
+          "extensive": "po"
+        },
+        {
+          "comment_id": "43da2b30-aef6-11e9-aacc-41df42c7d502",
+          "name": "mm",
+          "comment": "mm",
+          "extensive": "mm"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Night Club",
+      "country": "Rodhos",
+      "subtitle": "Welcome to Greece",
+      "content": "elit. Neque sequi, in distinctio. Repudiandae quas saepe quis, at nobis tempore reprehenderit corrupti cumque quidem sapiente corporis nisi ipsa iure repellat ex.",
+      "likes": 30,
+      "comments": [
+        {
+          "comment_id": "7d8833e0-a965-11e9-9544-3fb34d3e91bf",
+          "name": "po",
+          "comment": "po",
+          "extensive": "po"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Lame Bar",
+      "country": "Katerini",
+      "subtitle": "Some place",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quae iste sapiente sed laboriosam, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quae iste sapiente sed laboriosam in eligendi, dicta nisi veritatis officia illum ipsum officiis nemo perferendis. Eaque tenetur minus, dolores laboriosam!",
+      "likes": 12,
+      "comments": []
+    }
+  ]
+}

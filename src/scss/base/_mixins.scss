@@ -1,0 +1,23 @@
+@mixin breakpoint($point){
+	@if ($point == xxl){
+		@media (min-width: 1200px) { @content }
+	}
+	@else if ($point == xl){
+		@media (min-width: 1200px) { @content }
+	}
+	@else if ($point == lg){
+		@media (max-width: 991px) { @content }
+	}
+	@else if ($point == md){
+		@media (max-width: 780px) { @content }
+	}
+	@else if ($point == sm){
+		@media (max-width: 550px) { @content }
+	}
+}
+
+@mixin pseudo {
+	content: '';
+	display: block;
+	position: absolute;
+}
