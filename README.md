@@ -4,6 +4,7 @@
 
 this will spin a server in a different post
 
+File located in the root directory named as `db.json` 
 
 ## Available Scripts
 
