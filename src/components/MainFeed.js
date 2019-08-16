@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react';
 import placeImg from '../assets/place_one.jpg';
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
 import { useSelector } from "react-redux";
 // import { fetchPlaces } from '../actions/fetchPlaces';
 
 const MainFeed = () => {
 	const places = useSelector(state => state.places);
-	console.log(places)
+
 	return (
 		<Fragment>
 		<div className="top-banner">

@@ -46,6 +46,20 @@
 	}
 }
 
+// delete place
+.btn__delete-place {
+	@extend %btnStyles;
+	color: darkred;	
+	background: transparent;
+	border: 1px solid darkred;
+
+	&:hover {
+		background: darkred;
+		color: #fff;
+		transition: .3s;
+	}
+}
+
 // create new place
 .btn__submit {
 	background: #6a9b9c;

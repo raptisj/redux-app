@@ -6,27 +6,21 @@ import uuid from 'uuid/v1';
 import { useDispatch, useSelector } from "react-redux";
 
 const Place = (props) => {
-	const place = useSelector(state => state.places.filter(p => p.id == props.match.params.id))
-	console.log(place);
-	
-	const [singlePlace, setSinglePlace] = useState(place);
+	const [singlePlace, setSinglePlace] = useState([]);
 	const [modal, setModal] = useState(false);
 	const [name, setName] = useState('');
 	const [comment, setComment] = useState('');
 	const [extensive, setExtensive] = useState('');
 	const [likes, setLikes] = useState();
+	const [del, setDel] = useState(false);
 	const dispatch = useDispatch();
 
-	console.log(singlePlace)
 	useEffect(() => {
-	 	// setSinglePlace(place);
-	 // const fetchData = async () => {
-  //    	const result = await axios.get(`http://localhost:3004/places/${props.match.params.id}`)
-  //      		 setSinglePlace(result.data);
-	 // 	}
-	 // 	fetchData();
-	 console.log(singlePlace)
-	}, [])
+	 axios.get(`http://localhost:3004/places/${props.match.params.id}`)
+	 .then(res => {
+	 	setSinglePlace(res.data)
+	 })
+	}, [modal, del, likes])
 
 	const openModal = () => {
 		setModal(true);
@@ -39,28 +33,25 @@ const Place = (props) => {
 	const handleComment = (e) => {
 		e.preventDefault();
 		let id = uuid();
-		dispatch({type: 'ADD_COMMENT', comment_id: id, name: name, comment: comment, extensive: extensive, placeId: singlePlace.id })
-		// dispatch({type: 'ADD_COMMENT', comment: response.data.comments.slice(-1)[0] })
-        // axios.put(`http://localhost:3004/places/${singlePlace.id}`, {
-        // 	id: singlePlace.id,
-        // 	title: singlePlace.title,
-        // 	country: singlePlace.country,
-        // 	subtitle: singlePlace.subtitle,
-        // 	content: singlePlace.content,
-        // 	likes: singlePlace.likes,
-        // 	comments: [...singlePlace.comments, {"comment_id": id, "name": name, "comment": comment, "extensive": extensive}]
-        // })
-        // .then(function (response) {
+        axios.put(`http://localhost:3004/places/${singlePlace.id}`, {
+        	id: singlePlace.id,
+        	title: singlePlace.title,
+        	country: singlePlace.country,
+        	subtitle: singlePlace.subtitle,
+        	content: singlePlace.content,
+        	likes: singlePlace.likes,
+        	comments: [...singlePlace.comments, {"comment_id": id, "name": name, "comment": comment, "extensive": extensive}]
+        })
+        .then(function (response) {
         	setModal(false);
-			// setSinglePlace(singlePlace);
-        // })
-        // .catch(function (error) {
-        //     console.log(error);
-        // });
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
 
     const likeHandle = () => {
-			// dispatch({type: 'ADD_LIKE', placeId: singlePlace.id })
+    	setDel(!del)
 			axios.put(`http://localhost:3004/places/${singlePlace.id}`, {
 				id: singlePlace.id,
 				title: singlePlace.title,
@@ -70,15 +61,16 @@ const Place = (props) => {
 				likes: singlePlace.likes + 1,
 				comments: [...singlePlace.comments]
 			})
-			.then(function (response) {
+			// .then(function (response) {
         	// setLikes(singlePlace.likes)
-        })
+        // })
 			.catch(function (error) {
 				console.log(error);
 			});
 		}
 
 		const removeComment = (comId) => {
+			setDel(!del)
 			axios.put(`http://localhost:3004/places/${singlePlace.id}`, {
 				id: singlePlace.id,
 				title: singlePlace.title,
@@ -88,12 +80,21 @@ const Place = (props) => {
 				likes: singlePlace.likes,
 				comments: singlePlace.comments.filter(c => c.comment_id !== comId)
 			})
-			.then(function (response) {
+			// .then(function (response) {
+				// console.log(del)
 			// dispatch({type: 'DELETE_COMMENT', updatedComments: singlePlace.comments })
-		})
+		// })
 			.catch(function (error) {
 				console.log(error);
 			});
+		}
+
+		const deletePlace = () => {
+			axios.delete(`http://localhost:3004/places/${singlePlace.id}`)
+			.then(function (response) {
+				props.history.push('/');
+				dispatch({type: 'DELETE_PLACE', placeId: singlePlace.id})
+			})
 		}
 
 		return (
@@ -119,7 +120,7 @@ const Place = (props) => {
 						</div>
 						<ul>	
 							<li className="sidebar__info">
-								<h3>{console.log(singlePlace.title)}</h3>
+								<h3>{singlePlace.title}</h3>
 							</li>
 							<li className="sidebar__info">
 								{singlePlace.subtitle}
@@ -132,6 +133,7 @@ const Place = (props) => {
 				<div className="main-content">
 					<button onClick={likeHandle} className="btn__like">Like</button>
 					<button onClick={openModal} className="btn__comment">Add Comment</button>
+					<button onClick={deletePlace} className="btn__delete-place">Delete Place</button>
 					<Modal 
 					visible={modal}
 					effect="fadeInUp"
@@ -176,10 +178,6 @@ const Place = (props) => {
 								<p>{com.name}</p>
 								<h3>{com.comment}</h3>
 								<p>{com.extensive}</p>
-								{/*<button className="btn__delete-comment"
-								//  onClick={() => dispatch({type: 'DELETE_COMMENT',  placeId: singlePlace.id, comId: com.comment_id }) }
-								//  >
-							//  Delete</button>*/}
 								<button
 								className="btn__delete-comment"
 								onClick={() => removeComment(com.comment_id) }
