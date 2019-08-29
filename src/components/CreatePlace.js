@@ -1,15 +1,17 @@
 import React, { useState, Fragment } from 'react';
-import axios from 'axios';
 import uuid from 'uuid/v1';
 import { useDispatch } from "react-redux";
 import { addPlace } from '../actions/placeActions';
-// import { withRouter } from "react-router-dom";
+import { useForm } from './custom-hooks/useForm';
 
 const CreatePlace = (props) => {
-	const [name, setName] = useState('');
-	const [country, setCountry] = useState('');
-	const [subtitle, setSubtitle] = useState('');
-	const [description, setDescription] = useState('');
+	const [values, handleChange] = useForm({
+    	name: '',
+   		country: '',
+    	subtitle: '',
+    	description: ''
+  	});
+
 	const dispatch = useDispatch();
 
 	const handlePost = (e) => {
@@ -18,10 +20,10 @@ const CreatePlace = (props) => {
 
         const placeData = {
         	id,
-        	title: name,
-        	country,
-        	subtitle,
-        	content: description,
+        	title: values.name,
+        	country: values.country,
+        	subtitle: values.subtitle,
+        	content: values.description,
         	likes: 0,
         	comments: []
         }
@@ -45,23 +47,26 @@ const CreatePlace = (props) => {
 							<input
 							type="text"
 							className="create-form__input" 
-							onChange={(e) => setName(e.target.value)}
-							 />
+							name="name"
+							onChange={handleChange}
+							/>
 						</div>
 						<div className="create-form__field">
 							<label className="create-form__label">Country:</label>
 							<input 
 							type="text" 
-							className="create-form__input"  
-							onChange={(e) => setCountry(e.target.value)} 
+							className="create-form__input"   
+							name="country"
+							onChange={handleChange}
 							/>
 						</div>
 						<div className="create-form__field">
 							<label className="create-form__label">Subtitle:</label>
 							<input 
 							type="text" 
-							className="create-form__input" 
-							onChange={(e) => setSubtitle(e.target.value)} 
+							className="create-form__input"
+							name="subtitle"
+							onChange={handleChange}
 							/>
 						</div>
 						<div className="create-form__field">
@@ -69,7 +74,9 @@ const CreatePlace = (props) => {
 							<textarea 
 							rows="12" cols="50" 
 							className="create-form__textarea"  
-							onChange={(e) => setDescription(e.target.value)}>
+							name="description"
+							onChange={handleChange}
+							>
 							</textarea>
 						</div>
 						<div className="create-form__btn">

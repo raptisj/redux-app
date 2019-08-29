@@ -84,3 +84,16 @@ export const deleteComment = (placeId, removeCom) => dispatch => {
 		console.log(error);
 	})
 }
+
+export const addLike = (placeId, likes) => dispatch => {
+	axios.put(`http://localhost:3004/places/${placeId}`, likes)
+	.then((res) => {
+		dispatch({
+			type: FETCH_PLACE,
+			payload: res.data 
+		});
+	})
+	.catch(function (error) {
+		console.log(error);
+	})
+}

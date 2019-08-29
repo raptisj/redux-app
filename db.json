@@ -6,7 +6,7 @@
       "country": "Crete",
       "subtitle": "Enjoy the island",
       "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur veritatis, ratione optio unde nihil molestiae atque ducimus, reiciendis voluptas placeat recusandae autem consectetur quo facilis natus dolorem eos iste.",
-      "likes": 43,
+      "likes": 53,
       "comments": []
     },
     {
@@ -31,6 +31,12 @@
           "name": "Anna Carenina",
           "comment": "Pure garbage...",
           "extensive": "very dissapointed"
+        },
+        {
+          "comment_id": "de392a90-ca9f-11e9-a471-f3049a6e9661",
+          "name": "Paul",
+          "comment": "Quete something",
+          "extensive": "hell yeah"
         }
       ]
     },
@@ -40,8 +46,31 @@
       "country": "Takanika",
       "subtitle": "The place to be!!!!",
       "content": "lorem lore mlore returning a new object every time will always force a re-render by default. If you want to retrieve multiple values from the store, you can:",
+      "likes": 5,
+      "comments": [
+        {
+          "comment_id": "4b7f1bb0-ca95-11e9-be67-d5079ce6598e",
+          "name": "Bob",
+          "comment": "Just go!!!!",
+          "extensive": "The best bar period."
+        }
+      ]
+    },
+    {
+      "id": "66cffc10-caa2-11e9-af26-3b5745d0bd19",
+      "title": "The plaze",
+      "country": "zimbabue",
+      "subtitle": "the sub",
+      "content": "the descriptionenene",
       "likes": 0,
-      "comments": []
+      "comments": [
+        {
+          "comment_id": "e304dc10-caa2-11e9-a2a4-516f03159443",
+          "name": "Dan",
+          "comment": "IT sucks !!!!!",
+          "extensive": "WOwoO"
+        }
+      ]
     }
   ]
 }
