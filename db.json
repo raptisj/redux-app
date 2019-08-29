@@ -7,22 +7,15 @@
       "subtitle": "Enjoy the island",
       "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur veritatis, ratione optio unde nihil molestiae atque ducimus, reiciendis voluptas placeat recusandae autem consectetur quo facilis natus dolorem eos iste.",
       "likes": 43,
-      "comments": [
-        {
-          "comment_id": "5798cf20-c05b-11e9-9ad9-ff264ce58b98",
-          "name": "po",
-          "comment": "po",
-          "extensive": "po"
-        }
-      ]
+      "comments": []
     },
     {
       "id": 2,
-      "title": "Night Club",
-      "country": "Rodhos",
-      "subtitle": "Welcome to Greece",
-      "content": "elit. Neque sequi, in distinctio. Repudiandae quas saepe quis, at nobis tempore reprehenderit corrupti cumque quidem sapiente corporis nisi ipsa iure repellat ex.",
-      "likes": 35,
+      "title": "Good Bar",
+      "country": "Hawai",
+      "subtitle": "Let's dance",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur veritatis, ratione optio unde nihil molestiae atque ducimus, reiciendis voluptas placeat recusandae autem consectetur quo facilis natus dolorem eos iste.",
+      "likes": 33,
       "comments": []
     },
     {
@@ -32,6 +25,22 @@
       "subtitle": "Some place",
       "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quae iste sapiente sed laboriosam, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quae iste sapiente sed laboriosam in eligendi, dicta nisi veritatis officia illum ipsum officiis nemo perferendis. Eaque tenetur minus, dolores laboriosam!",
       "likes": 16,
+      "comments": [
+        {
+          "comment_id": "4dbd0f80-ca6e-11e9-82c7-63c3e4cd0acf",
+          "name": "Anna Carenina",
+          "comment": "Pure garbage...",
+          "extensive": "very dissapointed"
+        }
+      ]
+    },
+    {
+      "id": "f2342690-ca71-11e9-9614-35648dc3542a",
+      "title": "John's Bar",
+      "country": "Takanika",
+      "subtitle": "The place to be!!!!",
+      "content": "lorem lore mlore returning a new object every time will always force a re-render by default. If you want to retrieve multiple values from the store, you can:",
+      "likes": 0,
       "comments": []
     }
   ]

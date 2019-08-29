@@ -1,7 +1,7 @@
 .main-feed {
 	max-width: 900px;
 	margin: 60px auto 0 auto;
-	padding: 0 20px;
+	padding: 0 20px 40px 20px;
 
 	ul {
 		padding: 0;
@@ -56,6 +56,31 @@
 		&:hover {
 			color: #777;
 			transition: .3s;
+		}
+	}
+}
+
+.latest-posts {
+	h2 {
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 10px;
+		color: #333;
+	}
+	&__each {
+		padding-bottom: 20px;
+		h3 {
+			font-size: 2.5rem;
+			margin: 0;
+			color: #333;
+		}
+		p > span {
+			font-weight: 600;
+		}
+		.date {
+			color: grey;
+		}	
+		a:hover h3 {
+			color: #6a9b9c;
 		}
 	}
 }

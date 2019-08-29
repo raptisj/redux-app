@@ -76,3 +76,17 @@
 		transition: .3s;
 	}
 }
+
+.btn__to-blog {
+	@extend %btnStyles;
+	color: #fff;
+	background: #6a9b9c;
+	font-weight: 600;
+	border: 1px solid #6a9b9c;
+
+	&:hover {
+		background: transparent;
+		color: #6a9b9c;
+		transition: .3s;
+	}
+}

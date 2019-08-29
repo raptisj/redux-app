@@ -1,12 +1,41 @@
-const places = (state = [], action) => {
+import { 
+    FETCH_PLACES,
+    FETCH_PLACE,
+    ADD_PLACE,
+    DELETE_PLACE
+} from '../actions/types';
+
+const initialState = {
+  places: [],
+  place: {},
+  // loading: false
+};
+
+const places = (state = initialState, action) => {
 	switch (action.type) {
-    	case 'FETCH_PLACE':
-      		return action.data;
-      case 'DELETE_PLACE':
-        return state.filter(p => p.id !== action.placeId)
+     	case FETCH_PLACES:
+      		return {
+      			...state,
+	      		places: action.payload 
+      		};
+      	case FETCH_PLACE:
+      		return {
+      			...state,
+      			place: action.payload
+      		}
+        case ADD_PLACE:
+          return {
+            ...state,
+            places: [action.payload, ...state.places]
+          }
+      	case DELETE_PLACE:
+      		return {
+            ...state,
+            places: state.places.filter(place => place.id !== action.payload) 
+          }
     	default:
       		return state;
-  }
+  	}
 }
 
 export default places;
