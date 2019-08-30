@@ -1,92 +1,92 @@
-%btnStyles {
-	cursor: pointer;
-	padding: 6px 10px;
-	transition: .3s;
-	margin-right: 10px;
-	font-size: .8rem;
-	font-weight: 600;
-}
+// %btnStyles {
+// 	cursor: pointer;
+// 	padding: 6px 10px;
+// 	transition: .3s;
+// 	margin-right: 10px;
+// 	font-size: .8rem;
+// 	font-weight: 600;
+// }
 
-.btn__like {
-	@extend %btnStyles;
-	color: #6a9b9c;
-	background: transparent;
-	border: 1px solid #6a9b9c;
+// .btn__like {
+// 	@extend %btnStyles;
+// 	color: #6a9b9c;
+// 	background: transparent;
+// 	border: 1px solid #6a9b9c;
 
-	&:hover {
-		background: #6a9b9c;
-		color: #fff;
-		transition: .3s;
-	}
-}
+// 	&:hover {
+// 		background: #6a9b9c;
+// 		color: #fff;
+// 		transition: .3s;
+// 	}
+// }
 
-.btn__comment {
-	@extend %btnStyles;
-	color: #333;
-	background: transparent;
-	border: 1px solid #333;
+// .btn__comment {
+// 	@extend %btnStyles;
+// 	color: #333;
+// 	background: transparent;
+// 	border: 1px solid #333;
 
-	&:hover {
-		background: #333;
-		color: #fff;
-		transition: .3s;
-	}
-}
+// 	&:hover {
+// 		background: #333;
+// 		color: #fff;
+// 		transition: .3s;
+// 	}
+// }
 
-.btn__delete-comment {
-	@extend %btnStyles;
-	color: darkred;	
-	background: transparent;
-	border: 1px solid darkred;
+// .btn__delete-comment {
+// 	@extend %btnStyles;
+// 	color: darkred;	
+// 	background: transparent;
+// 	border: 1px solid darkred;
 
-	&:hover {
-		background: darkred;
-		color: #fff;
-		transition: .3s;
-	}
-}
+// 	&:hover {
+// 		background: darkred;
+// 		color: #fff;
+// 		transition: .3s;
+// 	}
+// }
 
 // delete place
-.btn__delete-place {
-	@extend %btnStyles;
-	color: darkred;	
-	background: transparent;
-	border: 1px solid darkred;
+// .btn__delete-place {
+// 	@extend %btnStyles;
+// 	color: darkred;	
+// 	background: transparent;
+// 	border: 1px solid darkred;
 
-	&:hover {
-		background: darkred;
-		color: #fff;
-		transition: .3s;
-	}
-}
+// 	&:hover {
+// 		background: darkred;
+// 		color: #fff;
+// 		transition: .3s;
+// 	}
+// }
 
 // create new place
-.btn__submit {
-	background: #6a9b9c;
-	border: none;
-	border-radius: 40px;
-	cursor: pointer;
-	font-weight: 600;
-	padding: 1rem 2rem;
-	color: #fff;
-	transition: .3s;
+// .btn__submit {
+// 	background: #6a9b9c;
+// 	border: none;
+// 	border-radius: 40px;
+// 	cursor: pointer;
+// 	font-weight: 600;
+// 	padding: 1rem 2rem;
+// 	color: #fff;
+// 	transition: .3s;
 
-	&:hover {
-		background: darken(#6a9b9c, 10%);
-		transition: .3s;
-	}
-}
+// 	&:hover {
+// 		background: darken(#6a9b9c, 10%);
+// 		transition: .3s;
+// 	}
+// }
 
-.btn__to-blog {
-	@extend %btnStyles;
-	color: #fff;
-	background: #6a9b9c;
-	font-weight: 600;
-	border: 1px solid #6a9b9c;
+// .btn__to-blog {
+// 	@extend %btnStyles;
+// 	color: #fff;
+// 	background: #6a9b9c;
+// 	font-weight: 600;
+// 	border: 1px solid #6a9b9c;
 
-	&:hover {
-		background: transparent;
-		color: #6a9b9c;
-		transition: .3s;
-	}
-}
+// 	&:hover {
+// 		background: transparent;
+// 		color: #6a9b9c;
+// 		transition: .3s;
+// 	}
+// }

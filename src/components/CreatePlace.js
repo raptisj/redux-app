@@ -3,6 +3,8 @@ import uuid from 'uuid/v1';
 import { useDispatch } from "react-redux";
 import { addPlace } from '../actions/placeActions';
 import { useForm } from './custom-hooks/useForm';
+import btnStyles from '../scss/components/Buttons.module.scss';
+import formStyles from '../scss/components/CreateForm.module.scss';
 
 const CreatePlace = (props) => {
 	const [values, handleChange] = useForm({
@@ -38,49 +40,49 @@ const CreatePlace = (props) => {
 				<h1>MainFeed Page</h1>
 			</div>
 			<div className="container">
-				<div className="create-form">
+				<div className={formStyles.createForm}>
 				<h2>Place Form</h2>
 				<p>Add all infomation about your place</p>
 					<form onSubmit={handlePost}>
-						<div className="create-form__field">
-							<label className="create-form__label">Name:</label>
+						<div className={formStyles.createForm__field}>
+							<label className={formStyles.createForm__label}>Name:</label>
 							<input
 							type="text"
-							className="create-form__input" 
+							className={formStyles.createForm__input} 
 							name="name"
 							onChange={handleChange}
 							/>
 						</div>
-						<div className="create-form__field">
-							<label className="create-form__label">Country:</label>
+						<div className={formStyles.createForm__field}>
+							<label className={formStyles.createForm__label}>Country:</label>
 							<input 
 							type="text" 
-							className="create-form__input"   
+							className={formStyles.createForm__input}   
 							name="country"
 							onChange={handleChange}
 							/>
 						</div>
-						<div className="create-form__field">
-							<label className="create-form__label">Subtitle:</label>
+						<div className={formStyles.createForm__field}>
+							<label className={formStyles.createForm__label}>Subtitle:</label>
 							<input 
 							type="text" 
-							className="create-form__input"
+							className={formStyles.createForm__input}
 							name="subtitle"
 							onChange={handleChange}
 							/>
 						</div>
-						<div className="create-form__field">
-							<label className="create-form__label">Description</label>
+						<div className={formStyles.createForm__field}>
+							<label className={formStyles.createForm__label}>Description</label>
 							<textarea 
 							rows="12" cols="50" 
-							className="create-form__textarea"  
+							className={formStyles.createForm__textarea}  
 							name="description"
 							onChange={handleChange}
 							>
 							</textarea>
 						</div>
 						<div className="create-form__btn">
-							<input type="submit" value="Submit" className="btn__submit"/>
+							<input type="submit" value="Submit" className={btnStyles.btn__submit}/>
 						</div>
 					</form>
 				</div>

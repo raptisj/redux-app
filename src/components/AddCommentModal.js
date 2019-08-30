@@ -4,6 +4,8 @@ import uuid from 'uuid/v1';
 import { useDispatch, useSelector } from "react-redux";
 import { addComment } from '../actions/placeActions';
 import { useForm } from './custom-hooks/useForm';
+import btnStyles from '../scss/components/Buttons.module.scss';
+import formStyles from '../scss/components/CreateForm.module.scss';
 
 const AddCommentModal = ({singlePlace, modal, closeModal}) => {
 	const [values, handleChange] = useForm({
@@ -41,37 +43,37 @@ const AddCommentModal = ({singlePlace, modal, closeModal}) => {
 				<div className="modal-input">
 					<h2>Add Comment</h2>
 					<form onSubmit={handleComment}>
-						<div className="create-form__field">
-							<label className="create-form__label">Name:</label>
+						<div className={formStyles.createForm__field}>
+							<label className={formStyles.createForm__label}>Name:</label>
 							<input
 							type="text"
-							className="create-form__input"
+							className={formStyles.createForm__input}
 							name="name"
 							onChange={handleChange}
 							autoFocus
 							required />
 						</div>
-						<div className="create-form__field">
-							<label className="create-form__label">Comment</label>
+						<div className={formStyles.createForm__field}>
+							<label className={formStyles.createForm__label}>Comment</label>
 							<input 
 							type="text" 
-							className="create-form__input"
+							className={formStyles.createForm__input}
 							name="comment"
 							onChange={handleChange} 
 							required />
 						</div>
-						<div className="create-form__field">
-							<label className="create-form__label">Extensive</label>
+						<div className={formStyles.createForm__field}>
+							<label className={formStyles.createForm__label}>Extensive</label>
 							<textarea
 							rows="6" cols="50" 
-							className="create-form__textarea"
+							className={formStyles.createForm__textarea}
 							name="extensive"
 							onChange={handleChange} 
 							required>
 							</textarea>
 						</div>
 						<div className="create-form__btn">
-							<input type="submit" value="Submit" className="btn__submit"/>
+							<input type="submit" value="Submit" className={btnStyles.btn__submit}/>
 						</div>
 					</form>
 					<a href="javascript:void(0);" className="modal-close" onClick={() => closeModal()}>Close</a>

@@ -1,15 +1,6 @@
 {
   "places": [
     {
-      "id": 1,
-      "title": "Beach Bar Ammos",
-      "country": "Crete",
-      "subtitle": "Enjoy the island",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur veritatis, ratione optio unde nihil molestiae atque ducimus, reiciendis voluptas placeat recusandae autem consectetur quo facilis natus dolorem eos iste.",
-      "likes": 53,
-      "comments": []
-    },
-    {
       "id": 2,
       "title": "Good Bar",
       "country": "Hawai",

@@ -3,6 +3,7 @@ import placeImg from '../assets/place_one.jpg';
 import axios from 'axios';
 import Modal from 'react-awesome-modal';
 import uuid from 'uuid/v1';
+import btnStyles from '../scss/components/Buttons.module.scss';
 import { useDispatch, useSelector } from "react-redux";
 import { 
 	fetchPlace,
@@ -90,9 +91,9 @@ const Place = (props) => {
 					</ul>
 				</div>
 			<div className="main-content">
-				<button onClick={likeHandle} className="btn__like">Like</button>
-				<button onClick={openModal} className="btn__comment">Add Comment</button>
-				<button onClick={deleteThisPlace} className="btn__delete-place">Delete Place</button>
+				<button onClick={likeHandle} className={btnStyles.btn__like}>Like</button>
+				<button onClick={openModal} className={btnStyles.btn__comment}>Add Comment</button>
+				<button onClick={deleteThisPlace} className={btnStyles.btn__deletePlace}>Delete Place</button>
 
 				<AddCommentModal singlePlace={singlePlace} modal={modal} closeModal={closeModal} />
 
@@ -109,7 +110,7 @@ const Place = (props) => {
 								<h3>{com.comment}</h3>
 								<p>{com.extensive}</p>
 								<button
-								className="btn__delete-comment"
+								className={btnStyles.btn__deleteComment}
 								onClick={() => removeComment(com.comment_id) }
 								>Delete</button>
 							</div>

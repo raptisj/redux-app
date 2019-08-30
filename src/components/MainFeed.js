@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchPlaces } from '../actions/placeActions';
 import { useFetch } from './custom-hooks/useFetch';
 import Spinner from './general/Spinner';
+import btnStyles from '../scss/components/Buttons.module.scss';
 
 const MainFeed = () => {
 	const places = useSelector(state => state.places.places);
@@ -70,7 +71,7 @@ const MainFeed = () => {
  					)
  				})
  					) : (<Spinner />)}
- 				<button className="btn__to-blog">See More</button>
+ 				<button className={btnStyles.btn__toBlog}>See More</button>
  			</div>
 		</div>
 		</Fragment>
