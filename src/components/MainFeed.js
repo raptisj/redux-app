@@ -3,21 +3,43 @@ import axios from 'axios';
 import placeImg from '../assets/place_one.jpg';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPlaces } from '../actions/placeActions';
+import { fetchPlaces, filterPlaces } from '../actions/placeActions';
 import { useFetch } from './custom-hooks/useFetch';
 import Spinner from './general/Spinner';
 import btnStyles from '../scss/components/Buttons.module.scss';
 
 const MainFeed = () => {
 	const places = useSelector(state => state.places.places);
+	const filteredList = useSelector(state => state.places.filtered);
+	const [isFiltered, setIsFiltered] = useState(false)
 	const dispatch = useDispatch();
+	let placesList = places;
+
+	if(isFiltered) {
+		placesList = filteredList;
+	}
 
 	useEffect(() => {
 		dispatch(fetchPlaces());
 	}, [dispatch])
 
-	// const [posts, setPosts] = useState([]);
-	const {data, loading} = useFetch(`http://localhost:4000/posts`)
+	// const {data, loading} = useFetch(`http://localhost:4000/posts`)
+	const {data, loading} = useFetch(`https://gentle-scrubland-61451.herokuapp.com/posts`)
+	// https://gentle-scrubland-61451.herokuapp.com/posts
+	const handleSearch = (e) => {
+		let current = e.target.value.toLowerCase();
+      	let pp;
+
+		 if (current !== ' ') {
+			pp = places.filter(r => {
+		    	if(r.title.toLowerCase().includes(current)) {
+		        	return r
+		   		}
+	       	})
+			setIsFiltered(true)
+		 } 			 
+		dispatch(filterPlaces(pp));
+	}
 
 	return (
 		<Fragment>
@@ -25,15 +47,18 @@ const MainFeed = () => {
 			<h1>MainFeed Page</h1>
 			<div className="search-bar">
 				<form className="search-bar__form">
-					<label className="search-bar__form">Search for a place:</label>
-					<input type="text" className="search-bar__input" />
+					<label className="search-bar__label">Search for a place:</label>
+					<input 
+					type="text" 
+					className="search-bar__input"
+					onChange={handleSearch} />
 				</form>
 			</div>
 		</div>
 		<div className="main-feed">
 			<ul>		
-			{(places) ? (
-				places.map( place => {
+			{(placesList) ? (
+				placesList.map( place => {
 				return (
 					<li key={place.id} className="main-feed__item">
 						<div className="likes">

@@ -2,7 +2,8 @@ import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios';
 
 const SinglePost = (props) => {
-	const url = `http://localhost:4000/posts/${props.match.params.id}`;
+	// const url = `http://localhost:4000/posts/${props.match.params.id}`;
+	const url = `https://gentle-scrubland-61451.herokuapp.com/posts/${props.match.params.id}`;
 	const [singlePost, setSinglePost] = useState('');
 	const [mounted, setMounted] = useState(false);
 	useEffect(() => {

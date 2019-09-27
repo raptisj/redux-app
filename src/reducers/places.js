@@ -2,12 +2,14 @@ import {
     FETCH_PLACES,
     FETCH_PLACE,
     ADD_PLACE,
-    DELETE_PLACE
+    DELETE_PLACE,
+    FILTER_PLACES
 } from '../actions/types';
 
 const initialState = {
   places: [],
   place: {},
+  filtered: []
   // loading: false
 };
 
@@ -32,6 +34,11 @@ const places = (state = initialState, action) => {
       		return {
             ...state,
             places: state.places.filter(place => place.id !== action.payload) 
+          }
+        case FILTER_PLACES:
+          return {
+            ...state,
+            filtered: action.payload
           }
     	default:
       		return state;

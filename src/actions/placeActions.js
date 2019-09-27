@@ -4,7 +4,8 @@ import {
 	FETCH_PLACES,
 	FETCH_PLACE,
 	ADD_PLACE,
-	DELETE_PLACE
+	DELETE_PLACE,
+	FILTER_PLACES
 } from './types';
 
 export const fetchPlaces = () => dispatch => {
@@ -18,6 +19,13 @@ export const fetchPlaces = () => dispatch => {
 	.catch(function (error) {
 		console.log(error);
 	})
+}
+
+export const filterPlaces = (current) => dispatch => {
+	dispatch({
+		type: FILTER_PLACES,
+		payload: current
+	});
 }
 
 export const fetchPlace = (id) => dispatch => {
