@@ -1,4 +1,3 @@
-
 .navbar {
 	background: transparent;
 	padding: 20px;
@@ -9,9 +8,11 @@
 	z-index: 1000;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	transition: all .4s;
 
 	&__left {
 		grid-column: 1 / 2;
+		display: grid;
 	}
 
 	&__right {
@@ -40,5 +41,27 @@
 		color: #fff;
 		border-right: 1px solid #fff;
 		padding: 10px 16px 10px 0;
+		justify-self: start;
+	}
+}
+
+.scrolled {
+	background: #fff;
+	padding: 10px 20px;
+	transition: all .4s;
+	border-bottom: 2px solid #6a9b9c;
+
+	.navbar__link {
+		color: #333;
+
+		&:hover {
+			border-color: #333;
+			transition: .3s;
+		}
+	}
+
+	.navbar__title {
+		color: #333;
+		border-right: 1px solid #333;
 	}
 }

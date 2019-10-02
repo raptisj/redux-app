@@ -6,11 +6,15 @@
 
 
 .sidebar {
-	// margin-top: 140px;	
-	// max-width: 242px;
-    position: relative;
-    padding-right: 20px;
-    margin-top: -70px;
+	position: relative;
+	padding-right: 20px;
+	margin-top: -70px;
+
+	@include breakpoint(md) {
+		padding-right: 0;
+		grid-column: 1 / -1;
+		margin-top: -35px;
+	}
 
 	ul {
 		padding: 0;
@@ -19,12 +23,11 @@
 
 	&__info {
 		font-size: .9rem;
-		padding: 6px 0;
-		border-bottom: 1px solid #e6e6e6;
+		padding: 0;
 
 		h3 {
 			font-size: 2rem;
-			margin: 0 0 10px 0;
+			margin: 0;
 		}
 
 		p {
@@ -64,8 +67,8 @@
 	height: 242px;	
 
 	@include breakpoint(md) {
-		width: 174px;
-		height: 174px;
+		width: 150px;
+		height: 150px;
 	}
 
 	img {

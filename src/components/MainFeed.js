@@ -24,8 +24,8 @@ const MainFeed = () => {
 	}, [dispatch])
 
 	// const {data, loading} = useFetch(`http://localhost:4000/posts`)
-	const {data, loading} = useFetch(`https://gentle-scrubland-61451.herokuapp.com/posts`)
-	// https://gentle-scrubland-61451.herokuapp.com/posts
+	let endpoint = `https://gentle-scrubland-61451.herokuapp.com/posts`
+	const {data, loading} = useFetch(endpoint)
 	const handleSearch = (e) => {
 		let current = e.target.value.toLowerCase();
       	let pp;
@@ -41,10 +41,17 @@ const MainFeed = () => {
 		dispatch(filterPlaces(pp));
 	}
 
+	const truncateContent = (content) => {
+		function truncate(str, no_words) {
+	    	return str.split(" ").splice(0, no_words).join(" ");
+		}
+		return truncate(content, 20)
+	}
+
 	return (
 		<Fragment>
 		<div className="top-banner">
-			<h1>MainFeed Page</h1>
+			<h1>The Place To Be</h1>
 			<div className="search-bar">
 				<form className="search-bar__form">
 					<label className="search-bar__label">Search for a place:</label>
@@ -56,6 +63,7 @@ const MainFeed = () => {
 			</div>
 		</div>
 		<div className="main-feed">
+		<h2>Places</h2>
 			<ul>		
 			{(placesList) ? (
 				placesList.map( place => {
@@ -73,13 +81,16 @@ const MainFeed = () => {
 						<div className="main-feed__item-info">
 						<Link  to={`place/${place.id}`} className="title-link">
 							<h3>{place.title}</h3>
-							<span>{place.subtitle}</span>
 						</Link>
-							<p>{place.content}</p>	
+							<span>{place.subtitle}</span>
+							<div className="item-content">
+								<p>{truncateContent(place.content)}</p>	
+							</div>
 						</div>	
 					</li>
 				)
 			}) ) : (<div></div>)}
+			{<span>{console.log(placesList.length)}</span>}
 			</ul>
 			<div className="latest-posts">
  				<h2>Latest Blog Posts</h2>

@@ -60,7 +60,7 @@ const Place = (props) => {
 			{(singlePlace) ? (
 		<Fragment>
 		<div className="top-banner">
-			<h1>MainFeed Page</h1>
+			<h1>{singlePlace.title}</h1>
 			<div className="search-bar">
 				<div className="top-bar-info">
 					<ul>
@@ -80,10 +80,7 @@ const Place = (props) => {
 					</div>
 					<ul>	
 						<li className="sidebar__info">
-							<h3>{singlePlace.title}</h3>
-						</li>
-						<li className="sidebar__info">
-							{singlePlace.subtitle}
+							<h3>{singlePlace.subtitle}</h3>
 						</li>
 						<li className="sidebar__info">
 							<p>{singlePlace.content}</p>

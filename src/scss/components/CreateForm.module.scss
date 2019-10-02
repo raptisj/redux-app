@@ -3,14 +3,10 @@
 	max-width: 600px;
 	width: 100%;
 	border: 3px solid #e6e6e6;
-	border-radius: 40px;
+	border-radius: 20px;
 	padding: 40px 20px;
 	margin: 40px auto 0 auto;
 	grid-column: 2 / 3;
-
-	// @include breakpoint(md) {
-	// 	width: initial;
-	// }
 
 	@media (max-width: 780px) {
 		width: initial;

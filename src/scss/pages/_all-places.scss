@@ -3,15 +3,21 @@
 	margin: 60px auto 0 auto;
 	padding: 0 20px 40px 20px;
 
+	h2 {
+		color: #333;
+	}
+
 	ul {
 		padding: 0;
 		list-style: none;
+		padding-bottom: 40px;
 	}
 
 	&__item {
 		margin-bottom: 30px;
-		border: 1px solid #e6e6e6;
-		padding: 20px;
+		border: 2px solid #e6e6e6;
+		border-radius: $card-radius;
+		// padding: 20px;
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 		position: relative;
@@ -50,11 +56,32 @@
 	&__item-info {
 		grid-column: 2 / 3;
 		padding: 20px;
+		display: grid;
+		grid-template-rows: max-content max-content;
 
-		p {
-			display: -webkit-box;
-			-webkit-line-clamp: 3;
-			-webkit-box-orient: vertical;
+		h3 {
+			font-size: 2rem;
+			margin: 0;
+		}
+
+		.item-content {
+			align-self: center;
+		}
+	}
+
+	.img-link {
+		transition: .3s;
+		img {
+			transition: .3s;
+			transform: translateY(-1px) translateX(-1px);
+			box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+		}
+		&:hover {
+			img {
+				transition: .3s;
+				transform: translateY(-4px) translateX(-3px);
+				box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
+			}
 		}
 	}
 
