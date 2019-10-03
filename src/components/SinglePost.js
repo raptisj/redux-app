@@ -1,5 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 const SinglePost = (props) => {
 	// const url = `http://localhost:4000/posts/${props.match.params.id}`;
@@ -15,24 +17,8 @@ const SinglePost = (props) => {
 		loadData();
 	}, [mounted])
 
-	const [title, setTitle] = useState();
-	const [description, setDescription] = useState();
-	const createPost = (e) => {
-		e.preventDefault();
-		axios.post('http://localhost:4000/posts', {
-        	title,
-        	description
-         })
-        .then(function (response) {
-			props.history.push('/');
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-	}
-
 	const deletePost = (id) => {
-		axios.delete(`http://localhost:4000/posts/${id}`)
+		axios.delete(`https://gentle-scrubland-61451.herokuapp.com/posts/${id}`)
 		.then(function (response) {
 			props.history.push('/');
 		})
@@ -45,33 +31,20 @@ const SinglePost = (props) => {
 					<div className="post_header">
 						<h3>{singlePost.title}</h3>
 					</div>
+					<button onClick={() => deletePost(singlePost._id)}>Delete</button>
+						<Link to={'/create-post'}>
+							<span>Create New Post</span>
+						</Link>
 					<section className="main-feed">
 						<div className="description">
 							<p>{singlePost.description}</p>
 							<span>{singlePost.date}</span>
-							<button onClick={() => deletePost(singlePost._id)}>Delete</button>
 						</div>
 					</section>
 				</Fragment>
 			) : (
 				<div>Loading ...</div>
 			)}
-
-
-			<form onSubmit={createPost}>
-					<div className="create-form__field">
-						<label className="create-form__label">Title:</label>
-						<input type="text" className="create-form__input" onChange={(e) => setTitle(e.target.value)} />
-					</div>
-					<div className="create-form__field">
-						<label className="create-form__label">Description</label>
-						<textarea rows="12" cols="50" className="create-form__textarea"  onChange={(e) => setDescription(e.target.value)}>
-						</textarea>
-					</div>
-					<div className="create-form__btn">
-						<input type="submit" value="Submit" className="btn__submit"/>
-					</div>
-				</form>
 		</div>
 	)
 }

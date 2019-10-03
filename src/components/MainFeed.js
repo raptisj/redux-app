@@ -84,13 +84,14 @@ const MainFeed = () => {
 						</Link>
 							<span>{place.subtitle}</span>
 							<div className="item-content">
-								<p>{truncateContent(place.content)}</p>	
+								<p>{truncateContent(place.content)}
+									<Link className="read-more" to={`place/${place.id}`}>...more</Link>
+								</p>	
 							</div>
 						</div>	
 					</li>
 				)
 			}) ) : (<div></div>)}
-			{<span>{console.log(placesList.length)}</span>}
 			</ul>
 			<div className="latest-posts">
  				<h2>Latest Blog Posts</h2>
@@ -101,7 +102,10 @@ const MainFeed = () => {
 						<Link to={`posts/${post._id}`}>
 							<h3>{post.title}</h3>
 						</Link>
-						<p><span>Description:</span> {post.description}</p>
+						<p><span>Description:</span>
+						 {truncateContent(post.description)}
+						 <Link className="read-more" to={`posts/${post._id}`}>...more</Link>
+						 </p>
 						<p className="date">{post.date}</p>
  					</div>
  					)

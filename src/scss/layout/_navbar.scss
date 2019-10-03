@@ -53,15 +53,23 @@
 
 	.navbar__link {
 		color: #333;
+		transition: all .3s;
 
 		&:hover {
-			border-color: #333;
-			transition: .3s;
+			color: $brand-color;
+			border-color: $brand-color;
+			transition: all .3s;
 		}
 	}
 
 	.navbar__title {
 		color: #333;
 		border-right: 1px solid #333;
+
+		&:hover {
+			color: $brand-color;
+			transition: all .3s;
+			border-right: 1px solid $brand-color;
+		}
 	}
 }

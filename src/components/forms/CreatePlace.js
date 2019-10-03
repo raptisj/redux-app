@@ -1,10 +1,10 @@
 import React, { useState, Fragment } from 'react';
 import uuid from 'uuid/v1';
 import { useDispatch } from "react-redux";
-import { addPlace } from '../actions/placeActions';
-import { useForm } from './custom-hooks/useForm';
-import btnStyles from '../scss/components/Buttons.module.scss';
-import formStyles from '../scss/components/CreateForm.module.scss';
+import { addPlace } from '../../actions/placeActions';
+import { useForm } from './../custom-hooks/useForm';
+import btnStyles from '../../scss/components/Buttons.module.scss';
+import formStyles from '../../scss/components/CreateForm.module.scss';
 
 const CreatePlace = (props) => {
 	const [values, handleChange] = useForm({
@@ -82,7 +82,7 @@ const CreatePlace = (props) => {
 							</textarea>
 						</div>
 						<div className="create-form__btn">
-							<input type="submit" value="Submit" className={btnStyles.btn__submit}/>
+							<input type="submit" value="Submit" className={btnStyles.btn__submit} />
 						</div>
 					</form>
 				</div>

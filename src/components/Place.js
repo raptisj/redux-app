@@ -13,7 +13,7 @@ import {
 	addLike 
 } from '../actions/placeActions';
 import Spinner from './general/Spinner';
-import AddCommentModal from './AddCommentModal';
+import AddCommentModal from './forms/AddCommentModal';
 
 const Place = (props) => {
 	const [modal, setModal] = useState(false);
@@ -80,7 +80,10 @@ const Place = (props) => {
 					</div>
 					<ul>	
 						<li className="sidebar__info">
-							<h3>{singlePlace.subtitle}</h3>
+							<h3>{singlePlace.title}</h3>
+						</li>
+						<li className="sidebar__info">
+							<p>{singlePlace.subtitle}</p>
 						</li>
 						<li className="sidebar__info">
 							<p>{singlePlace.content}</p>
