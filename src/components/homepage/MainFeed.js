@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import axios from 'axios';
-import placeImg from '../assets/place_one.jpg';
+import placeImg from '../../assets/place_one.jpg';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPlaces, filterPlaces } from '../actions/placeActions';
-import { useFetch } from './custom-hooks/useFetch';
-import Spinner from './general/Spinner';
-import btnStyles from '../scss/components/Buttons.module.scss';
+import { fetchPlaces, filterPlaces } from '../../actions/placeActions';
+import { useFetch } from './../custom-hooks/useFetch';
+import Spinner from './../general/Spinner';
+import btnStyles from '../../scss/components/Buttons.module.scss';
 
 const MainFeed = () => {
 	const places = useSelector(state => state.places.places);
@@ -111,7 +111,7 @@ const MainFeed = () => {
  					)
  				})
  					) : (<Spinner />)}
- 				<button className={btnStyles.btn__toBlog}>See More</button>
+ 				<Link to="/posts" className={btnStyles.btn__toBlog}>All Posts</Link>
  			</div>
 		</div>
 		</Fragment>

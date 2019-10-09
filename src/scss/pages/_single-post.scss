@@ -1,12 +1,71 @@
-.post_header {
-	min-height: 200px;
-	background: #6a9b9c;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.post {
+	&__header {
+		min-height: 200px;
+		background: #6a9b9c;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-	h3 {
-		color: #fff;
-		font-size: 2rem;
+		h3 {
+			color: #fff;
+			font-size: 2rem;
+		}
+	}
+	&__actions {
+		display: flex;
+		justify-content: flex-end;
+		padding-bottom: 20px;
+
+		%btnStyles {
+			cursor: pointer;
+			padding: 6px 10px;
+			transition: .3s;
+			margin-right: 10px;
+			font-size: 1rem;
+			font-weight: 600;
+			border-radius: 20px;
+			background: transparent;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+
+		.btn__delete-post {
+			@extend %btnStyles;
+			border: 2px solid #333;
+			color: #333;
+		}
+
+		.btn__create-post {
+			@extend %btnStyles;
+			border: 2px solid #333;
+			color: #333;
+		}
+	}
+
+	&__content {
+		padding-top: 50px;
+
+		span {
+			font-size: 1.2rem;
+			color: #808080;
+			font-style: italic;
+		}
+		&--inner {
+			position: relative;
+			padding-left: 75px;
+			padding-top: 25px;
+
+			&::before {
+				@include pseudo;
+				top: 25px;
+				left: 25px;
+				width: 1px;
+				height: 100%;
+				background: #e6e6e6;
+			}
+		}
 	}
 }

@@ -2,6 +2,7 @@
 	display: grid;
 	grid-template-columns: 1fr 900px 1fr;
 	padding-bottom: 50px;
+	min-height: 100vh;
 
 	@include breakpoint(xxl) {
 		grid-template-columns: 1fr 1160px 1fr;
@@ -12,3 +13,15 @@
 	}
 }
 
+.footer {
+	background: #333;
+	color: #ddd;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.mh-100 {
+	min-height: 100vh;
+}

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 const SinglePost = (props) => {
-	// const url = `http://localhost:4000/posts/${props.match.params.id}`;
 	const url = `https://gentle-scrubland-61451.herokuapp.com/posts/${props.match.params.id}`;
 	const [singlePost, setSinglePost] = useState('');
 	const [mounted, setMounted] = useState(false);
@@ -25,21 +24,25 @@ const SinglePost = (props) => {
 	}
 
 	return (
-		<div>
+		<div className="post mh-100">
 			{(mounted) ? (
 				<Fragment>
-					<div className="post_header">
+					<div className="post__header">
 						<h3>{singlePost.title}</h3>
 					</div>
-					<button onClick={() => deletePost(singlePost._id)}>Delete</button>
-						<Link to={'/create-post'}>
-							<span>Create New Post</span>
-						</Link>
 					<section className="main-feed">
-						<div className="description">
+					<div className="post__actions">
+						<button className="btn__delete-post" onClick={() => deletePost(singlePost._id)}>Delete</button>
+						<Link className="btn__create-post" to={'/create-post'}>
+							Create New Post
+						</Link>
+					</div>
+					<div className="post__content">
+						<span>{singlePost.date}</span>
+						<div className="post__content--inner">
 							<p>{singlePost.description}</p>
-							<span>{singlePost.date}</span>
 						</div>
+					</div>
 					</section>
 				</Fragment>
 			) : (

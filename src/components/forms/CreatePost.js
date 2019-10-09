@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from 'react';
-import axios from 'axios';
-import btnStyles from '../../scss/components/Buttons.module.scss';
-import formStyles from '../../scss/components/CreateForm.module.scss';
+import React, { Fragment, useState } from 'react'
+import axios from 'axios'
+import btnStyles from '../../scss/components/Buttons.module.scss'
+import formStyles from '../../scss/components/CreateForm.module.scss'
 
 const CreatePost = (props) => {
 	const [title, setTitle] = useState();

@@ -1,0 +1,77 @@
+.blog {
+	&__header {
+		min-height: 200px;
+		background: #6a9b9c;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		h1 {
+			color: #fff;
+			font-size: 3rem;
+			margin-bottom: 0;
+		}
+
+		p {
+			color: #fff;
+			position: relative;
+			margin-top: 0;
+
+			&::before {
+				@include pseudo;
+				top: -2px;
+				right: -30%;
+				background: #fff;
+				width: 70%;
+				height: 2px;
+			}
+			&::after {
+				@include pseudo;
+				bottom: -7px;
+				left: -15%;
+				background: #fff;
+				width: 35%;
+				height: 2px;
+			}
+		}
+	}
+
+	&__grid {
+		margin: 0 auto;
+		max-width: 800px;
+		padding-top: 100px;
+	}
+
+	&__each-post {
+		padding-bottom: 20px;
+		padding-left: 20px;
+		border-left: 6px solid grey;
+		margin-bottom: 20px;
+		transition: all .3s;
+
+		&:hover {
+			border-left: 6px solid $brand-color;
+			transition: all .3s;
+		}
+
+		h3 {
+			font-size: 2rem;
+			margin: 0;
+			color: #333;
+			display: inline-block;
+		}
+
+		p > span {
+			font-weight: 600;
+		}
+
+		.date {
+			color: grey;
+		}	
+
+		a:hover h3 {
+			color: #6a9b9c;
+		}
+	}
+}

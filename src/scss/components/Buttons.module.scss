@@ -5,6 +5,7 @@
 	margin-right: 10px;
 	font-size: .8rem;
 	font-weight: 600;
+	border-radius: 20px;
 }
 
 .btn__like {
@@ -32,6 +33,7 @@
 		transition: .3s;
 	}
 }
+
 
 .btn__deletePlace {
 	@extend %btnStyles;
