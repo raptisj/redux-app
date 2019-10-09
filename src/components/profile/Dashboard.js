@@ -1,7 +1,9 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, Fragment } from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { useFetch } from './../custom-hooks/useFetch';
+import { getCurrentUser } from '../../actions/authActions'
+// import { useFetch } from './../custom-hooks/useFetch'
+import { useDispatch, useSelector } from "react-redux"
 
 const hr = {
 	border: 'none',
@@ -9,22 +11,23 @@ const hr = {
 };
 
 const Dashboard = (props) => {
-	// const url = 'http://localhost:4000/api/profile';
-	const [user, setUser] = useState();
-	useEffect(() => {
-		axios.get('http://localhost:4000/api/profile')
-		.then(res => setUser(res.data))
+	const dispatch = useDispatch();
+	const sin = useSelector(state => state.auth);
+	const user = useSelector(state => state.auth.current);
+// console.log(sin)
+
+	// const [user, setUser] = useState();
+	// useEffect(() => {
+		// dispatch(getCurrentUser())
+		// axios.get(`http://localhost:4000/api/profile/`)
+		// .then(res => setUser(res.data))
 		// const loadData = async () => {
 		// 	const res = await axios.get(url);
 		// 	setMounted(true)
 
 		// }
 		// loadData();
-	}, [])
-// let endpoint = `http://localhost:4000/api/profile`
-// 	const {data, loading} = useFetch(endpoint)
-	// let au = 'http://localhost:4000/api/profile';
-	// const {data, loading} = useFetch(au);
+	// }, [])
 
 	return (
 		<Fragment>
@@ -38,22 +41,23 @@ const Dashboard = (props) => {
 							<span>Options</span>
 						</li>
 						<li>
-							<Link>Places</Link>
+							<Link to="/">Places</Link>
 						</li>
 						<li>
-							<Link>Comments</Link>
+							<Link to="/">Comments</Link>
 						</li>
 						<li>
-							<Link>Posts</Link>
+							<Link to="/">Posts</Link>
 						</li>
 						<hr style={hr} />
 						<li>
-							<Link>Settings</Link>
+							<Link to="/">Settings</Link>
 						</li>
 					</ul>
 				</div>
 				<div className="dashboard__main">
-					<h1>Matt Davella</h1>
+			 		{(user) ? (<h1>{user.name}</h1>) : (<div></div>)}
+			 		{(user) ? (<span>{user.email}</span>) : (<div></div>)}
 					<h2>Dashboard</h2>
 					<div className="dashboard__main--content">
 						<h3>Bio</h3>
@@ -85,4 +89,3 @@ const Dashboard = (props) => {
 }
 
 export default Dashboard
-			// {(user) ? (<h2>{user.name}</h2>) : (<div></div>)}

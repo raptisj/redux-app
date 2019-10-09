@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import Modal from 'react-awesome-modal';
 import uuid from 'uuid/v1';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addComment } from '../../actions/placeActions';
 import { useForm } from './../custom-hooks/useForm';
 import btnStyles from '../../scss/components/Buttons.module.scss';

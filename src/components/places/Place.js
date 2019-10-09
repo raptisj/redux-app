@@ -1,19 +1,19 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import placeImg from '../../assets/place_one.jpg';
-import axios from 'axios';
-import Modal from 'react-awesome-modal';
-import uuid from 'uuid/v1';
-import btnStyles from '../../scss/components/Buttons.module.scss';
-import { useDispatch, useSelector } from "react-redux";
+import React, { Fragment, useState, useEffect } from 'react'
+import placeImg from '../../assets/place_one.jpg'
+import axios from 'axios'
+import Modal from 'react-awesome-modal'
+import uuid from 'uuid/v1'
+import btnStyles from '../../scss/components/Buttons.module.scss'
+import { useDispatch, useSelector } from "react-redux"
 import { 
 	fetchPlace,
  	deletePlace, 
  	addComment, 
  	deleteComment, 
 	addLike 
-} from '../../actions/placeActions';
-import Spinner from './../general/Spinner';
-import AddCommentModal from './../forms/AddCommentModal';
+} from '../../actions/placeActions'
+import Spinner from './../general/Spinner'
+import AddCommentModal from './../forms/AddCommentModal'
 
 const Place = (props) => {
 	const [modal, setModal] = useState(false);

@@ -1,27 +1,27 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { useDispatch } from "react-redux"
+import { loginUser } from '../../actions/authActions'
 import btnStyles from '../../scss/components/Buttons.module.scss'
 import formStyles from '../../scss/components/CreateForm.module.scss'
 
 const Login = (props) => {
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
-	const loginUser = (e) => {
+
+	const dispatch = useDispatch();
+
+	const login = (e) => {
 		e.preventDefault();
 
-		axios.post('http://localhost:4000/api/user/login', {
-        	email,
+		const userData = {
+		   	email,
         	password
-         })
-        .then(function (response) {
-        	axios.defaults.headers.common['auth-token'] = response.data;
-        	// console.log(response.data)
-			props.history.push('/dashboard');
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+		}
+
+		dispatch(loginUser(userData))
+		props.history.push('/dashboard');
 	}
 
 	return (
@@ -35,7 +35,7 @@ const Login = (props) => {
 					<p>Don't have an account?
 						<Link className="login-link" to={'/register'}>Register here</Link>
 					</p>
-					<form onSubmit={loginUser}>
+					<form onSubmit={login}>
 						<div className={formStyles.createForm__field}>
 							<label className={formStyles.createForm__label}>Email:</label>
 							<input type="text" className={formStyles.createForm__input} onChange={(e) => setEmail(e.target.value)} />

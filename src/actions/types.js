@@ -3,3 +3,7 @@ export const FETCH_PLACE = 'FETCH_PLACE';
 export const ADD_PLACE = 'ADD_PLACE';
 export const DELETE_PLACE = 'DELETE_PLACE';
 export const FILTER_PLACES = 'FILTER_PLACES';
+
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const UNSET_CURRENT_USER = 'UNSET_CURRENT_USER';
+export const GET_CURRENT_USER = 'GET_CURRENT_USER';
