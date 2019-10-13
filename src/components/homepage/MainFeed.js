@@ -54,7 +54,7 @@ const MainFeed = () => {
 			<h1>The Place To Be</h1>
 			<div className="search-bar">
 				<form className="search-bar__form">
-					<label className="search-bar__label">Search for a place:</label>
+					<label className="search-bar__label">Search places:</label>
 					<input 
 					type="text" 
 					className="search-bar__input"
